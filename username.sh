@@ -1,14 +1,20 @@
 #! /bin/bash
 # username.shh
-# Lisa Pham
+# Lisa Pham"
+echo "Rules: "
+echo "	Can only contain: "
+echo "	    -lowercase characters"
+echo "	    -digits"
+echo " 	    -underscore character"
+echo " 	It must start with a lowercase character"
+echo " 	It must contain at least 3 but no more than 12 characters"
+echo "	"
 echo "Enter a Username: "
-read ZIP
-while echo "$ZIP" | egrep -v "^[0-9]{5}$" > /dev/null 2>&1
+read USER
+while echo "$USER" | egrep -v "^[a-z][a-z0-9_]{2,11}$" > /dev/null 2>&1
 do
-	echo "The only characters that can be used are lower case letters, digits, and the underscore character!"
-	echo "It must start with a lower case letter"
-	echo "It must contain at least three but no more than 12 characters"
-	echo "Enter a five-digit ZIP code: "
-	read ZIP
+	echo "Invalid Username!"
+	echo "Enter a Username: "
+	read USER
 done
 echo "Thank you"
